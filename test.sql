@@ -1,4 +1,12 @@
-use pucsdStudents;
+CREATE DATABASE IF NOT EXISTS pucsdStudent;
+
+USE pucsdStudent;
+
+CREATE USER IF NOT EXISTS 'pucsd'@'localhost' IDENTIFIED BY 'pucsd';
+
+GRANT ALL PRIVILEGES ON pucsdStudent. * TO 'pucsd'@'localhost';
+
+DROP TABLE IF EXISTS studentData;
 
 create table studentData (Roll_No int not null, Name char (20), Address char (30), Mobile_No int (10), PAN_no varchar(10), PRIMARY KEY(Roll_No));
 
